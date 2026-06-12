@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dossiê do Detetive - Acessibilidade na Comunidade</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #eee;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(2px);
+            box-shadow: 0 25px 45px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        /* Cabeçalho Detetive */
+        .header {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            padding: 40px;
+            text-align: center;
+            border-bottom: 4px solid #f39c12;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .header h1 span {
+            color: #f39c12;
+            font-family: monospace;
+            font-size: 2rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #f39c12;
+            color: #1a1a2e;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        /* Navegação */
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            background: rgba(0,0,0,0.5);
+            padding: 15px;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: #f39c12;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .nav a:hover {
+            background: #f39c12;
+            color: #1a1a2e;
+        }
+
+        /* Cards das Fases */
+        .phase {
+            padding: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .phase-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .phase-number {
+            background: #f39c12;
+            color: #1a1a2e;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 15px;
+            padding: 20px;
+            transition: transform 0.3s;
+            border-left: 4px solid #f39c12;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.12);
+        }
+
+        .card h3 {
+            color: #f39c12;
+            margin-bottom: 12px;
+        }
+
+        .formula {
+            background: #0a0a1a;
+            padding: 10px;
+            border-radius: 8px;
+            font-family: monospace;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #f39c12;
+            color: #1a1a2e;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #e67e22;
+            transform: scale(1.05);
+        }
+
+        /* Tabela de perícia */
+        .forensic-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .forensic-table th, .forensic-table td {
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 12px;
+            text-align: left;
+        }
+
+        .forensic-table th {
+            background: #f39c12;
+            color: #1a1a2e;
+        }
+
+        /* Rodapé */
+        .footer {
+            background: #0a0a1a;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.5rem; }
+            .phase { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho -->
+        <div class="header">
+            <h1>🕵️‍♂️ DOSSIÊ DO DETETIVE <span>#ACESSIBILIDADE</span></h1>
+            <p>Desvendando Barreiras: O Mapeamento da (In)Acessibilidade na Nossa Comunidade</p>
+            <div class="badge">CASO ATIVO - EM INVESTIGAÇÃO</div>
+        </div>
+
+        <!-- Navegação -->
+        <div class="nav">
+            <a href="#fase1">🔍 FASE 1 - Coleta</a>
+            <a href="#fase2">🧹 FASE 2 - Perícia</a>
+            <a href="#fase3">🖼️ FASE 3 - Quadro Final</a>
+            <a href="#ia">🤖 IA Assistente</a>
+        </div>
+
+        <!-- FASE 1 -->
+        <div id="fase1" class="phase">
+            <div class="phase-title">
+                <div class="phase-number">1</div>
+                <h2>🔍 A COLETA DE PISTAS</h2>
+            </div>
+            <p><strong>Google Formulários é seu interrogatório.</strong> Não pode ser chato. Precisa ser um termo de declaração bem elaborado.</p>
+            
+            <div class="cards">
+                <div class="card">
+                    <h3>📋 Perfil da Testemunha</h3>
+                    <p>Idade, bairro, deficiência (mobilidade, visual, etc.), se acompanha idoso ou criança.</p>
+                </div>
+                <div class="card">
+                    <h3>🚶 A Experiência na Cena do Crime</h3>
+                    <p><em>"Na última semana, você deixou de sair de casa por causa de calçadas?"</em><br>
+                    Maior dificuldade: ( ) Calçada esburacada ( ) Falta de rampa ( ) Ônibus lotado.</p>
+                </div>
+                <div class="card">
+                    <h3>🗺️ A Arma do Crime</h3>
+                    <p><em>"Marque no mapa: Onde está o local mais perigoso perto da sua casa?"</em></p>
+                </div>
+            </div>
+            <a href="#" class="btn">📎 Ver modelo de formulário (exemplo)</a>
+        </div>
+
+        <!-- FASE 2 -->
+        <div id="fase2" class="phase">
+            <div class="phase-title">
+                <div class="phase-number">2</div>
+                <h2>🧹 A SALA DE PERÍCIA (Planilhas)</h2>
+            </div>
+            <p>Filtrar, interrogar os dados e separar as digitais do crime.</p>
+            
+            <table class="forensic-table">
+                <thead>
+                    <tr><th>Ação Forense</th><th>Como fazer na Planilha</th><th>O que você descobre</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>🔎 Filtrar Suspeitos</td><td>Filtrar por coluna → só quem respondeu "Sim" para "já caiu na calçada"</td><td>Quantos acidentes só por causa da calçada</td></tr>
+                    <tr><td>📊 Procurar Padrões</td><td><code class="formula" style="background:transparent; padding:0;">=CONT.SE(C2:C100; "Cadeirante")</code></td><td>Quantas pessoas com deficiência física</td></tr>
+                    <tr><td>⚙️ Cruzar Dados</td><td>Tabela Dinâmica: Linhas = Bairro, Colunas = "Falta Rampa"</td><td><strong>Prova do crime:</strong> "No Bairro A, 90% reclamam de rampa"</td></tr>
+                    <tr><td>🗑️ Descartar Lixo</td><td>Remover linhas com respostas inválidas</td><td>Garantir que não há pegadas falsas</td></tr>
+                </tbody>
+            </table>
+            <div class="formula">
+                💡 Fórmula poderosa: =SE(E(B2="Sim"; C2="Idoso"); "Prioridade"; "Normal")
+            </div>
+        </div>
+
+        <!-- FASE 3 -->
+        <div id="fase3" class="phase">
+            <div class="phase-title">
+                <div class="phase-number">3</div>
+                <h2>🖼️ MONTAGEM DO QUADRO (Canva + IA)</h2>
+            </div>
+            <p>Números frios não convencem. Imagens sim. Use a IA como seu escriba e designer.</p>
+            
+            <div class="cards">
+                <div class="card">
+                    <h3>🤖 IA gera o Roteiro da Acusação</h3>
+                    <div class="formula">
+                        "Tenho 200 pessoas. 70% faltam rampa. 50% idosos evitam sair. Escreva um parágrafo de abertura emocionante."
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>📊 Gráficos no Canva</h3>
+                    <p>• Barras: Top 5 problemas<br>• Pizza: Quem respondeu?<br>• Mapa de calor com círculos vermelhos</p>
+                </div>
+                <div class="card">
+                    <h3>🎨 IA gera imagens</h3>
+                    <div class="formula">
+                        "Estilo ilustração editorial. Uma pessoa de cadeira de rodas parada em frente a um enorme buraco na calçada."
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- IA AVANÇADA -->
+        <div id="ia" class="phase">
+            <div class="phase-title">
+                <div class="phase-number">🤖</div>
+                <h2>Assistente IA - Dica de Mestre</h2>
+            </div>
+            <div class="card" style="background:#0f0c29;">
+                <h3>🔍 Prompt Avançado para encontrar a agulha no palheiro</h3>
+                <div class="formula" style="background:#000; color:#0f0;">
+                    "Aqui estão 50 respostas abertas de pessoas sobre mobilidade. Liste para mim as 5 reclamações mais citadas e extraia 3 citações literais chocantes."
+                </div>
+                <p style="margin-top:15px;">✅ Isso transforma 1 hora de leitura em 2 minutos de análise.</p>
+            </div>
+        </div>
+
+        <!-- Slide final exemplo -->
+        <div class="phase" style="background: rgba(243,156,18,0.1);">
+            <div class="phase-title">
+                <div class="phase-number">📋</div>
+                <h2>Relatório Final do Detetive (Estrutura do Slide)</h2>
+            </div>
+            <div class="cards">
+                <div class="card">1️⃣ Título dramático + imagem gerada pela IA</div>
+                <div class="card">2️⃣ O problema em números (gráfico de barras)</div>
+                <div class="card">3️⃣ Relato de uma testemunha (resposta do formulário)</div>
+                <div class="card">4️⃣ Mapa dos pontos críticos</div>
+                <div class="card">5️⃣ SOLUÇÃO: "Sugerimos: Rampa aqui, fiscalização ali."</div>
+            </div>
+            <a href="#" class="btn">🎨 Abrir Canva para criar apresentação</a>
+        </div>
+
+        <!-- Rodapé -->
+        <div class="footer">
+            <p>🕵️‍♂️ Dossiê do Detetive da Acessibilidade | Dados coletados com Google Forms | Análise em Planilhas | Apresentação no Canva + IA</p>
+            <p style="margin-top:10px;">🔍 <em>“A comunidade precisa do seu relatório final.”</em> — Chefe Marcelo</p>
+        </div>
+    </div>
+</body>
+</html>
